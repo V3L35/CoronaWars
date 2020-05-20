@@ -1,18 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Whitey/cell_4_1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Whitey/cell_4_2.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Whitey/cell_4_3.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Whitey/cell_4_4.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Whitey/cell_4_5.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.5105
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "shoot",
 "speed": 5.0
 } ]
 
@@ -27,6 +34,12 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 5.66667, 2 )
 frames = SubResource( 2 )
-animation = "idle"
-frame = 1
+animation = "shoot"
 speed_scale = 1.2
+
+[node name="Reload_speed" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Reload_speed" to="." method="_on_Reload_speed_timeout"]
