@@ -7,7 +7,13 @@ var motion = Vector2()
 var attack_play = false
 var can_shoot = true
 
+var dead = false
+
+func _ready():
+	Global.player = self
+
 func _physics_process(delta):
+	move_and_slide(motion)
 	update_motion(delta)
 	shoot()
 	if not attack_play:
@@ -26,10 +32,11 @@ func update_motion(delta):
 	
 	motion = motion.normalized()
 	
-	global_position += motion * SPEED * delta
+	if dead == false:
+		global_position += motion * SPEED * delta
 	
 func shoot():
-	if Input.is_action_just_pressed("click") and Global.noode_creation_parent != null and can_shoot:
+	if Input.is_action_just_pressed("click") and Global.noode_creation_parent != null and can_shoot and not dead:
 		Global.instance_node(fireball, global_position, Global.noode_creation_parent)
 		$Reload_speed.start()
 		can_shoot = false
@@ -43,3 +50,13 @@ func _on_Reload_speed_timeout():
 
 func _on_AnimatedSprite_animation_finished():
 	attack_play = false
+
+func _exit_tree():
+	Global.player = null
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("Enemy"):
+		visible = false
+		dead = true
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().reload_current_scene()
