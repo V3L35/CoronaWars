@@ -5,7 +5,8 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GFX/font/Stabillo Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=5]
-[ext_resource path="res://GFX/Background/Pared del medio.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Highscore.gd" type="Script" id=6]
+[ext_resource path="res://SFX/Music/infiltrator.ogg" type="AudioStream" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -17,23 +18,19 @@ size = 89
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 9.45358
-height = 587.682
-
 [node name="Arena" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -308.0
-margin_top = -138.0
-margin_right = 1105.0
-margin_bottom = 817.0
+margin_left = -210.9
+margin_top = -149.5
+margin_right = 868.1
+margin_bottom = 618.5
 texture = ExtResource( 2 )
 stretch_mode = 1
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 319.632, 238.659 )
+position = Vector2( 304.269, 326.65 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -42,20 +39,23 @@ environment = SubResource( 1 )
 wait_time = 1.8
 autostart = true
 
+[node name="Enemy_difficulty" type="Timer" parent="."]
+
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 2.99252, -51.8762 )
 z_index = 20
 
 [node name="Control" type="Control" parent="Node2D"]
-margin_left = -0.92865
-margin_top = 35.5926
-margin_right = 639.071
-margin_bottom = 395.593
+margin_left = -118.249
+margin_top = 133.36
+margin_right = 521.75
+margin_bottom = 493.36
 
 [node name="Score" type="Label" parent="Node2D/Control"]
-margin_left = -3.49896
-margin_top = 4.10107
-margin_right = 1284.5
-margin_bottom = 143.101
+margin_left = -178.194
+margin_top = -166.834
+margin_right = 1277.81
+margin_bottom = -19.8335
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "sadsad"
@@ -63,91 +63,47 @@ align = 1
 valign = 1
 script = ExtResource( 5 )
 
-[node name="Wall" type="StaticBody2D" parent="."]
-modulate = Color( 0.964706, 0.94902, 0.94902, 1 )
-collision_layer = 4
-collision_mask = 3
+[node name="Score2" type="Label" parent="Node2D/Control"]
+margin_left = -330.194
+margin_top = -166.834
+margin_right = 1125.81
+margin_bottom = -19.8335
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
+text = "Points:"
+align = 1
+valign = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2( 28.3638, 251.329 )
-shape = SubResource( 3 )
+[node name="Highscore" type="Label" parent="Node2D/Control"]
+margin_left = 427.942
+margin_top = -170.396
+margin_right = 1715.94
+margin_bottom = -31.3961
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
+text = "sadsad"
+align = 1
+valign = 1
+script = ExtResource( 6 )
 
-[node name="Wall6" type="StaticBody2D" parent="."]
-modulate = Color( 0.972549, 0.972549, 0.972549, 1 )
-collision_layer = 4
-collision_mask = 3
+[node name="Highscore2" type="Label" parent="Node2D/Control"]
+margin_left = 289.187
+margin_top = -167.732
+margin_right = 1577.18
+margin_bottom = -28.7318
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
+text = "Highscore:"
+align = 1
+valign = 1
 
-[node name="Sprite2" type="Sprite" parent="Wall6"]
-modulate = Color( 0.380392, 0.121569, 0.466667, 1 )
-position = Vector2( 748.92, 287.905 )
-scale = Vector2( 1.71079, 1.50097 )
-texture = ExtResource( 6 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall6"]
-position = Vector2( 28.3638, 251.329 )
-shape = SubResource( 3 )
-
-[node name="Borders" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 3
-
-[node name="Sprite3" type="Sprite" parent="Borders"]
-modulate = Color( 0.380392, 0.121569, 0.466667, 1 )
-position = Vector2( 29.078, 287.808 )
-scale = Vector2( 1.71079, 1.49756 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
-position = Vector2( 257.999, 47.8852 )
-rotation = 1.5708
-shape = SubResource( 3 )
-
-[node name="Wall2" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 3
-
-[node name="Sprite4" type="Sprite" parent="Wall2"]
-modulate = Color( 0.380392, 0.121569, 0.466667, 1 )
-position = Vector2( 388.191, 34.8936 )
-rotation = 1.5708
-scale = Vector2( 1.71079, 1.90339 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
-position = Vector2( 748.818, 238.338 )
-shape = SubResource( 3 )
-
-[node name="Wall3" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
-position = Vector2( 880.791, 49.2422 )
-rotation = 1.5708
-shape = SubResource( 3 )
-
-[node name="Wall4" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
-position = Vector2( 843.432, 571.357 )
-rotation = 1.5708
-shape = SubResource( 3 )
-
-[node name="Wall5" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 3
-
-[node name="Sprite7" type="Sprite" parent="Wall5"]
-modulate = Color( 0.380392, 0.121569, 0.466667, 1 )
-position = Vector2( 385.736, 575.098 )
-rotation = 1.5708
-scale = Vector2( 1.71079, 2.11484 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
-position = Vector2( 221.741, 568.636 )
-rotation = 1.5708
-shape = SubResource( 3 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 298.171, 180.819 )
+offset = Vector2( 21, 0 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="Enemy_difficulty" to="." method="_on_Enemy_difficulty_timeout"]

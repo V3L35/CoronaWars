@@ -1,7 +1,7 @@
 extends CPUParticles2D
 
 func _ready():
-	pass
+	$ExplodeSFX.play()
 
 
 func _on_Freeze_timeout():

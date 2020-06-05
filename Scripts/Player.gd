@@ -20,7 +20,8 @@ func _physics_process(delta):
 		animate(motion)
 
 func _input(event):
-	if event.is_action_pressed("click"):
+	if Input.is_action_just_pressed("click"):
+		$ShootSFX.play()
 		attack_play = true
 		$AnimatedSprite.play("shoot")
 
@@ -31,6 +32,9 @@ func update_motion(delta):
 	motion.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up")) 
 	
 	motion = motion.normalized()
+	
+	global_position.x = clamp(global_position.x, -126, 766)
+	global_position.y = clamp(global_position.y, -66, 416)
 	
 	if dead == false:
 		global_position += motion * SPEED * delta
@@ -59,4 +63,7 @@ func _on_Area2D_area_entered(area):
 		visible = false
 		dead = true
 		yield(get_tree().create_timer(1), "timeout")
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
+		
+		Global.points = 0
+

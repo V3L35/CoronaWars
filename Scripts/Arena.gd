@@ -18,4 +18,6 @@ func _on_Enemy_spawn_timer_timeout():
 	Global.instance_node(enemy_1, enemy_position, self)
 
 
-
+func _on_Enemy_difficulty_timeout():
+	if $Enemy_spawn_timer.wait_time > 0.5:
+		$Enemy_spawn_timer.wait_time -= 0.1

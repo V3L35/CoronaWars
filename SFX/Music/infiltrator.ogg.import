@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/infiltrator.ogg-8f1a78cd29c1287499e27bbe26b976df.oggstr"
+
+[deps]
+
+source_file="res://SFX/Music/infiltrator.ogg"
+dest_files=[ "res://.import/infiltrator.ogg-8f1a78cd29c1287499e27bbe26b976df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
