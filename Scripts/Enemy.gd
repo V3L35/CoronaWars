@@ -33,6 +33,8 @@ func _on_Hitbox_area_entered(area):
 		$Stun_Timer.start()
 		stun = true
 		area.get_parent().queue_free()
+	elif area.is_in_group("Enemy_damager_ultra"):
+		hp -= 3
 
 func _on_Stun_Timer_timeout():
 	$AnimatedSprite.modulate = Color("ffffff")

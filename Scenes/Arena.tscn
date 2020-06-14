@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Arena.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Background/background_2.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Highscore.gd" type="Script" id=6]
 [ext_resource path="res://SFX/Music/infiltrator.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/BlueFlame.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -14,7 +15,7 @@ glow_enabled = true
 glow_bloom = 0.5
 
 [sub_resource type="DynamicFont" id=2]
-size = 89
+size = 52
 use_filter = true
 font_data = ExtResource( 4 )
 
@@ -28,6 +29,9 @@ margin_right = 868.1
 margin_bottom = 618.5
 texture = ExtResource( 2 )
 stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 304.269, 326.65 )
@@ -52,10 +56,10 @@ margin_right = 521.75
 margin_bottom = 493.36
 
 [node name="Score" type="Label" parent="Node2D/Control"]
-margin_left = -178.194
-margin_top = -166.834
-margin_right = 1277.81
-margin_bottom = -19.8335
+margin_left = -116.764
+margin_top = -87.2019
+margin_right = 1339.24
+margin_bottom = 59.7986
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "sadsad"
@@ -64,46 +68,61 @@ valign = 1
 script = ExtResource( 5 )
 
 [node name="Score2" type="Label" parent="Node2D/Control"]
-margin_left = -330.194
-margin_top = -166.834
-margin_right = 1125.81
-margin_bottom = -19.8335
+margin_left = -186.856
+margin_top = -87.2019
+margin_right = 1269.15
+margin_bottom = 59.7986
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "Points:"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Highscore" type="Label" parent="Node2D/Control"]
-margin_left = 427.942
-margin_top = -170.396
-margin_right = 1715.94
-margin_bottom = -31.3961
+margin_left = 377.888
+margin_top = -86.2135
+margin_right = 1665.89
+margin_bottom = 52.7864
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "sadsad"
 align = 1
 valign = 1
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Highscore2" type="Label" parent="Node2D/Control"]
-margin_left = 289.187
-margin_top = -167.732
-margin_right = 1577.18
-margin_bottom = -28.7318
+margin_left = 293.737
+margin_top = -85.8247
+margin_right = 1581.73
+margin_bottom = 53.1755
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "Highscore:"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -11.106
+autoplay = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 298.171, 180.819 )
-offset = Vector2( 21, 0 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
+[node name="BlueFlame" parent="." instance=ExtResource( 8 )]
+position = Vector2( 274.162, 154.714 )
+scale = Vector2( 0.306775, 0.324549 )
+frame = 28
+
+[node name="Flame_powerup_spawn_time" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
 [connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="Enemy_difficulty" to="." method="_on_Enemy_difficulty_timeout"]
+[connection signal="timeout" from="Flame_powerup_spawn_time" to="." method="_on_Flame_powerup_spawn_time_timeout"]

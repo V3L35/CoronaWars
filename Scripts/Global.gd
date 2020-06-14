@@ -2,6 +2,7 @@ extends Node
 
 var noode_creation_parent = null
 var player = null
+var flame = false
 
 var points = 0
 var highscore = 0
