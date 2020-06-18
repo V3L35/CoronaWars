@@ -165,10 +165,10 @@ animations = [ {
 radius = 44.4577
 
 [node name="BlueFlame" type="AnimatedSprite"]
-modulate = Color( 0.0627451, 0.686275, 0.827451, 1 )
+modulate = Color( 0.498039, 0.905882, 1, 1 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 31 )
-frame = 26
+frame = 15
 speed_scale = 5.0
 playing = true
 script = ExtResource( 2 )
@@ -180,7 +180,7 @@ collision_layer = 8
 shape = SubResource( 32 )
 
 [node name="Flame_life_cycle" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 6.0
 one_shot = true
 
 [node name="Flame_despawn_timer" type="Timer" parent="."]

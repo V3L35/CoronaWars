@@ -59,6 +59,10 @@ config/icon="res://GFX/Icon/cell_3_1.png"
 Global="*res://Scripts/Global.gd"
 InputManager="*res://InputManager.gd"
 
+[compression]
+
+formats/zstd/compression_level=10
+
 [display]
 
 window/size/width=640

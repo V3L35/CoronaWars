@@ -50,7 +50,7 @@ func shoot():
 			Global.instance_node(fireball, global_position, Global.noode_creation_parent)
 			$Reload_speed.start()
 			can_shoot = false
-		else:
+		elif Global.flame == true:
 			Global.instance_node(blue_flame, specialized_position, Global.noode_creation_parent)
 			$Reload_speed.start()
 			can_shoot = false
@@ -72,6 +72,7 @@ func _on_Area2D_area_entered(area):
 		visible = false
 		dead = true
 		Global.flame = false
+		Global.save_game()
 		yield(get_tree().create_timer(1), "timeout")
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
@@ -82,4 +83,4 @@ func _input(event):
 	if event is InputEventScreenDrag:
 		motion = event.relative
 		motion = motion.normalized()
-		global_position += motion * 4
+		global_position += motion * 7

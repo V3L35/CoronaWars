@@ -105,6 +105,9 @@ margin_bottom = 248.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label2" type="Label" parent="TextureRect2/Credits"]
 margin_top = 3.0
@@ -146,6 +149,7 @@ position = Vector2( 688.539, 552.857 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 2 )
 animation = "stand"
+frame = 1
 speed_scale = 0.8
 playing = true
 
