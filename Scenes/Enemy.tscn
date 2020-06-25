@@ -17,7 +17,7 @@ radius = 23.1707
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
-knockback = 30
+knockback = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )

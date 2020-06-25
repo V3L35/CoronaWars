@@ -28,8 +28,7 @@ script = ExtResource( 2 )
 [node name="Hitbox" type="Area2D" parent="." groups=[
 "Enemy_damager",
 ]]
-rotation = 2.27374e-013
-scale = Vector2( 1, 1 )
+rotation = 2.27374e-13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 73.5299, -3.3935 )
@@ -37,5 +36,5 @@ rotation = -1.5708
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-rotation = 7.10543e-015
+rotation = 7.10543e-15
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

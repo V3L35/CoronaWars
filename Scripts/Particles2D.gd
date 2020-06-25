@@ -1,5 +1,6 @@
 extends Particles2D
 
+var dir = 0
 var motion = Vector2(1, 0)
 var speed = 200
 

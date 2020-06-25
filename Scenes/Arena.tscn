@@ -39,7 +39,7 @@ position = Vector2( 304.269, 326.65 )
 environment = SubResource( 1 )
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 3.3
 autostart = true
 
 [node name="Enemy_difficulty" type="Timer" parent="."]
@@ -120,6 +120,7 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -11.106
+autoplay = true
 
 [node name="Flame_powerup_spawn_time" type="Timer" parent="."]
 wait_time = 32.0

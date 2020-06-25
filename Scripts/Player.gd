@@ -74,13 +74,17 @@ func _on_Area2D_area_entered(area):
 		Global.flame = false
 		Global.save_game()
 		yield(get_tree().create_timer(1), "timeout")
-# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
-		
+		Global.points = 0
+	elif area.is_in_group("Player_damager"):
+		visible = false
+		dead = true
+		Global.flame = false
+		Global.save_game()
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
 		Global.points = 0
 
-func _input(event):
-	if event is InputEventScreenDrag:
-		motion = event.relative
-		motion = motion.normalized()
-		global_position += motion * 7
+#		motion = event.relative
+#		motion = motion.normalized()
+#		global_position += motion * 7

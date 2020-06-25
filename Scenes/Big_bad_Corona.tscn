@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GFX/CoronaEnemy/virus_1_3.png" type="Texture" id=1]
+[ext_resource path="res://GFX/CoronaEnemy/virus_1_2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Big_bad_Corona.gd" type="Script" id=3]
+[ext_resource path="res://GFX/shield/spr_shield.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 55.3928
+
+[node name="Boss" type="KinematicBody2D"]
+modulate = Color( 0.639216, 0.666667, 0.384314, 1 )
+script = ExtResource( 3 )
+hp = 30
+point_addition = 100
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 1 )
+animation = "stand"
+frame = 1
+playing = true
+
+[node name="Boss_Hitbox" type="Area2D" parent="AnimatedSprite" groups=[
+"Enemy",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Boss_Hitbox"]
+visible = false
+position = Vector2( 0.907478, 6.35227 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite"]
+position = Vector2( 0, 60 )
+enabled = true
+cast_to = Vector2( 0, 700 )
+
+[node name="Stun_Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Reload_time" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="spr_shield" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2.85059, 2.20494 )
+scale = Vector2( 0.270751, 0.264536 )
+texture = ExtResource( 4 )
+
+[node name="Shield_timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+[connection signal="area_entered" from="AnimatedSprite/Boss_Hitbox" to="." method="_on_Boss_Hitbox_area_entered"]
+[connection signal="timeout" from="Stun_Timer" to="." method="_on_Stun_Timer_timeout"]
+[connection signal="timeout" from="Reload_time" to="." method="_on_Reload_time_timeout"]
+[connection signal="timeout" from="Shield_timer" to="." method="_on_Shield_timer_timeout"]

@@ -19,23 +19,25 @@ radius = 22.932
 script = ExtResource( 3 )
 hp = 10
 point_addition = 50
+knockback = 10
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "stand"
 
-[node name="Boss_Hitbox" type="Area2D" parent="AnimatedSprite" groups=[
+[node name="Hitbox" type="Area2D" parent="AnimatedSprite" groups=[
 "Enemy",
 ]]
 scale = Vector2( 2.5, 2.5 )
+collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Boss_Hitbox"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Hitbox"]
 position = Vector2( 0.875969, -2.04392 )
 shape = SubResource( 2 )
 
 [node name="Stun_Timer" type="Timer" parent="."]
+wait_time = 0.2
 autostart = true
-[connection signal="area_entered" from="AnimatedSprite/Boss_Hitbox" to="." method="_on_Boss_Hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite/Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="timeout" from="Stun_Timer" to="." method="_on_Stun_Timer_timeout"]

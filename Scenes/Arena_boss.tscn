@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/Background/background_2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Arena_boss.gd" type="Script" id=3]
+[ext_resource path="res://GFX/font/Stabillo Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scripts/Label.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Highscore.gd" type="Script" id=6]
+[ext_resource path="res://SFX/Music/infiltrator.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Big_bad_Corona.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "move"
+length = 14.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 5.1, 7.1, 8, 9, 10, 11, 12, 12.7, 13.8, 14.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80.4763, 83.5197 ), Vector2( 180.476, 83.52 ), Vector2( 280.476, 83.52 ), Vector2( 380.476, 83.52 ), Vector2( 480.476, 83.52 ), Vector2( 580.476, 83.52 ), Vector2( 600.476, 83.52 ), Vector2( 600.476, 83.52 ), Vector2( 500.476, 83.52 ), Vector2( 400.476, 83.52 ), Vector2( 300.476, 83.52 ), Vector2( 200.476, 83.52 ), Vector2( 100.476, 83.52 ), Vector2( 20.476, 83.52 ), Vector2( 20.476, 83.52 ), Vector2( 80.476, 83.52 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "big_projectile"
+} ]
+}
+
+[sub_resource type="Environment" id=2]
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.5
+
+[sub_resource type="DynamicFont" id=3]
+size = 52
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Arena_boss" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.4, 0.1, 0.1, 1 )
+margin_left = -210.9
+margin_top = -149.936
+margin_right = 868.1
+margin_bottom = 618.064
+texture = ExtResource( 2 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss" parent="." instance=ExtResource( 8 )]
+position = Vector2( 80.4763, 83.5197 )
+point_addition = 100
+
+[node name="Boss_move" type="AnimationPlayer" parent="Boss"]
+anims/move = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 353.849, 312.849 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 2.99252, -51.8762 )
+z_index = 20
+
+[node name="Control" type="Control" parent="Node2D"]
+margin_left = -118.249
+margin_top = 133.36
+margin_right = 521.75
+margin_bottom = 493.36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Node2D/Control"]
+margin_left = -120.764
+margin_top = -87.202
+margin_right = 1335.24
+margin_bottom = 59.7985
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
+text = "sadsad"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Label" parent="Node2D/Control"]
+margin_left = -186.856
+margin_top = -87.2019
+margin_right = 1269.15
+margin_bottom = 59.7986
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
+text = "Points:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="Node2D/Control"]
+margin_left = 377.888
+margin_top = -86.2135
+margin_right = 1665.89
+margin_bottom = 52.7864
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
+text = "sadsad"
+align = 1
+valign = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore2" type="Label" parent="Node2D/Control"]
+margin_left = 293.737
+margin_top = -85.8247
+margin_right = 1581.73
+margin_bottom = 53.1755
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
+text = "Highscore:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -11.106
+autoplay = true
+
+[node name="Flame_powerup_spawn_time" type="Timer" parent="."]
+wait_time = 32.0
+autostart = true
+[connection signal="tree_exited" from="Boss" to="." method="_on_Boss_tree_exited"]
+[connection signal="timeout" from="Flame_powerup_spawn_time" to="." method="_on_Flame_powerup_spawn_time_timeout"]

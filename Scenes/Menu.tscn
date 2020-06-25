@@ -67,6 +67,9 @@ margin_right = 746.537
 margin_bottom = 610.151
 texture = ExtResource( 4 )
 stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Start" type="TextureButton" parent="TextureRect2"]
 modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
@@ -97,6 +100,7 @@ __meta__ = {
 }
 
 [node name="Credits" type="TextureButton" parent="TextureRect2"]
+visible = false
 modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
 margin_left = 105.0
 margin_top = 150.0

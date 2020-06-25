@@ -3,7 +3,7 @@ extends InputEventAction
 
 var position
 var relative
-var speed = 2
+var speed
 
 func _init(e):
 	position = e.position
