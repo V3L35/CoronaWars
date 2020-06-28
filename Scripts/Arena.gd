@@ -12,6 +12,7 @@ var colors = []
 
 func _ready():
 	Global.noode_creation_parent = self
+	$Enemy_spawn_timer.wait_time = Global.Difficulty
 
 		
 func _exit_tree():
@@ -19,25 +20,25 @@ func _exit_tree():
 
 	
 func _on_Enemy_spawn_timer_timeout():
-	if Global.points >= 2020:
+	if Global.points >= 2020*Global.num_level:
 		get_tree().change_scene("res://Scenes/Arena_boss.tscn")
 	if Global.points % 500 == 0 and Global.points != 0:
-		var flame_position = Vector2(rand_range(0, 640), rand_range(0, 320))
+		var flame_position = Vector2(rand_range(0, 360), rand_range(0, 720))
 		Global.instance_node(flame_1, flame_position, self)
 		
-	var enemy_position = Vector2(rand_range(-160, 670), rand_range(-90, 80))
+	var enemy_position = Vector2(rand_range(-160, 430), rand_range(-90, 80))
 	
-	while enemy_position.x < 640 and enemy_position.x > -80 and enemy_position.y < 80 and enemy_position.y > -45:
-		enemy_position = Vector2(rand_range(-160, 670), rand_range(-90, 80))
+	while enemy_position.x < 400 and enemy_position.x > -80 and enemy_position.y < 80 and enemy_position.y > -45:
+		enemy_position = Vector2(rand_range(-160, 430), rand_range(-90, 80))
 		
 	Global.instance_node(enemy_1, enemy_position, self)
 
 
 func _on_Enemy_boss_timeout():
-	var boss_position = Vector2(rand_range(-160, 670), rand_range(-90, 80))
+	var boss_position = Vector2(rand_range(-160, 430), rand_range(-90, 80))
 	
-	while boss_position.x < 640 and boss_position.x > -80 and boss_position.y < 80 and boss_position.y > -45:
-		boss_position = Vector2(rand_range(-160, 670), rand_range(-90, 80))
+	while boss_position.x < 400 and boss_position.x > -80 and boss_position.y < 80 and boss_position.y > -45:
+		boss_position = Vector2(rand_range(-160, 430), rand_range(-90, 80))
 		
 	Global.instance_node(enemy_2, boss_position, self)
 			
@@ -47,7 +48,7 @@ func _on_Enemy_difficulty_timeout():
 
 
 func _on_Flame_powerup_spawn_time_timeout():
-	var flame_position = Vector2(rand_range(0, 640), rand_range(0, 320))
+	var flame_position = Vector2(rand_range(0, 400), rand_range(120, 320))
 	Global.instance_node(flame_1, flame_position, self)
 
 

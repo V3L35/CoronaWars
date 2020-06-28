@@ -11,7 +11,7 @@
 font_path = "res://GFX/font/Stabillo Medium.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 68
+size = 45
 font_data = SubResource( 1 )
 
 [node name="GameOver" type="Node"]
@@ -34,23 +34,23 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 23.8394
-margin_top = 234.166
-margin_right = 1054.84
-margin_bottom = 317.166
+margin_left = -10.3606
+margin_top = 242.716
+margin_right = 1020.64
+margin_bottom = 325.716
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 103.0
-margin_top = 9.0
-margin_right = 927.0
-margin_bottom = 72.0
+margin_left = 243.0
+margin_top = 20.0
+margin_right = 788.0
+margin_bottom = 62.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_right = 824.0
-margin_bottom = 63.0
+margin_right = 545.0
+margin_bottom = 42.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
@@ -63,14 +63,14 @@ margin_right = 657.0
 margin_bottom = 592.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
-margin_right = 514.0
+margin_right = 426.0
 margin_bottom = 128.0
 alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer2/HBoxContainer"]
-margin_top = 32.0
-margin_right = 250.0
-margin_bottom = 95.0
+margin_top = 43.0
+margin_right = 162.0
+margin_bottom = 85.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.976471, 0.984314, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
@@ -79,8 +79,8 @@ align = 1
 valign = 1
 
 [node name="YES" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
-margin_left = 254.0
-margin_right = 382.0
+margin_left = 166.0
+margin_right = 294.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
@@ -88,8 +88,8 @@ texture_hover = ExtResource( 5 )
 
 [node name="NO" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
 modulate = Color( 0.705882, 0.0705882, 0.25098, 1 )
-margin_left = 386.0
-margin_right = 514.0
+margin_left = 298.0
+margin_right = 426.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )

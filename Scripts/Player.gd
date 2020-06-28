@@ -37,8 +37,8 @@ func update_motion(delta):
 	
 	motion = motion.normalized()
 	
-	global_position.x = clamp(global_position.x, 20, 620)
-	global_position.y = clamp(global_position.y, 15, 345)
+	global_position.x = clamp(global_position.x, 20, 333)
+	global_position.y = clamp(global_position.y, 15, 705)
 	specialized_position = Vector2(global_position.x, global_position.y-60)
 	
 	if dead == false:
@@ -85,6 +85,8 @@ func _on_Area2D_area_entered(area):
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 		Global.points = 0
 
-#		motion = event.relative
-#		motion = motion.normalized()
-#		global_position += motion * 7
+func _input(event):
+	if event is InputEventScreenDrag:
+		motion = event.relative
+		motion = motion.normalized()
+		global_position += motion * 6

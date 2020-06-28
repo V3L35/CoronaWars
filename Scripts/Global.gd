@@ -4,6 +4,9 @@ var noode_creation_parent = null
 var player = null
 var flame = false
 
+var num_level = 1
+
+var Difficulty = 3.3
 var points = 0
 var highscore = 0
 

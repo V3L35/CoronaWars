@@ -22,10 +22,10 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -210.9
-margin_top = -150.527
-margin_right = 868.1
-margin_bottom = 617.473
+margin_left = -312.128
+margin_top = -25.4807
+margin_right = 766.872
+margin_bottom = 742.519
 texture = ExtResource( 2 )
 stretch_mode = 1
 __meta__ = {
@@ -33,7 +33,7 @@ __meta__ = {
 }
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 304.269, 326.65 )
+position = Vector2( 250, 326.65 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -54,15 +54,18 @@ position = Vector2( 2.99252, -51.8762 )
 z_index = 20
 
 [node name="Control" type="Control" parent="Node2D"]
-margin_left = -118.249
-margin_top = 133.36
-margin_right = 521.75
-margin_bottom = 493.36
+margin_left = -143.113
+margin_top = 128.847
+margin_right = 496.886
+margin_bottom = 488.847
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Score" type="Label" parent="Node2D/Control"]
-margin_left = -120.764
+margin_left = -130.764
 margin_top = -87.202
-margin_right = 1335.24
+margin_right = 1325.24
 margin_bottom = 59.7985
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
@@ -89,10 +92,10 @@ __meta__ = {
 }
 
 [node name="Highscore" type="Label" parent="Node2D/Control"]
-margin_left = 377.888
-margin_top = -86.2135
-margin_right = 1665.89
-margin_bottom = 52.7864
+margin_left = 142.967
+margin_top = -85.3561
+margin_right = 1430.97
+margin_bottom = 53.6438
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "sadsad"
@@ -104,10 +107,10 @@ __meta__ = {
 }
 
 [node name="Highscore2" type="Label" parent="Node2D/Control"]
-margin_left = 293.737
-margin_top = -85.8247
-margin_right = 1581.73
-margin_bottom = 53.1755
+margin_left = 63.1031
+margin_top = -84.1099
+margin_right = 1351.1
+margin_bottom = 54.8903
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
 text = "Highscore:"

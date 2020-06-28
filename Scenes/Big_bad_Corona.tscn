@@ -26,7 +26,6 @@ point_addition = 100
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "stand"
-frame = 1
 playing = true
 
 [node name="Boss_Hitbox" type="Area2D" parent="AnimatedSprite" groups=[
@@ -48,7 +47,6 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Reload_time" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="spr_shield" type="Sprite" parent="."]

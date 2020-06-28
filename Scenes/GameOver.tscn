@@ -460,76 +460,72 @@ animations = [ {
 font_path = "res://GFX/font/Stabillo Medium.ttf"
 
 [sub_resource type="DynamicFont" id=91]
-size = 68
+size = 54
 font_data = SubResource( 90 )
 
 [node name="GameOver" type="Node"]
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -9.8219
-margin_top = -1.2605
-margin_right = 1014.18
-margin_bottom = 766.74
+margin_left = -82.371
+margin_top = 6.80054
+margin_right = 941.631
+margin_bottom = 774.801
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="TextureRect"]
-position = Vector2( 505.828, 368.321 )
-current = true
-zoom = Vector2( 1.5, 1.5 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect"]
-position = Vector2( 527.887, 355.461 )
-scale = Vector2( 3, 3 )
+position = Vector2( 281.239, 352.774 )
+scale = Vector2( 1.97663, 1.81394 )
 frames = SubResource( 89 )
-frame = 3
+frame = 55
 speed_scale = 3.0
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 23.8394
-margin_top = 234.166
-margin_right = 1054.84
-margin_bottom = 317.166
+margin_left = -341.384
+margin_top = 363.07
+margin_right = 709.616
+margin_bottom = 447.07
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 135.0
-margin_top = 10.0
-margin_right = 896.0
-margin_bottom = 73.0
+margin_left = 357.0
+margin_top = 17.0
+margin_right = 694.0
+margin_bottom = 67.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_right = 761.0
-margin_bottom = 63.0
+margin_right = 337.0
+margin_bottom = 50.0
 custom_fonts/font = SubResource( 91 )
 custom_colors/font_color = Color( 0.027451, 0.137255, 0.482353, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "You defeated many corona viruses!"
+text = "You were defeated!"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
-margin_left = 280.0
-margin_top = 509.0
-margin_right = 657.0
-margin_bottom = 592.0
+margin_left = -47.4882
+margin_top = 460.634
+margin_right = 416.512
+margin_bottom = 588.634
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
-margin_right = 514.0
-margin_bottom = 128.0
+margin_left = 132.0
+margin_top = 38.0
+margin_right = 332.0
+margin_bottom = 88.0
 alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer2/HBoxContainer"]
-margin_top = 32.0
-margin_right = 250.0
-margin_bottom = 95.0
+margin_right = 200.0
+margin_bottom = 50.0
 custom_fonts/font = SubResource( 91 )
 custom_colors/font_color = Color( 0.027451, 0.137255, 0.482353, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
@@ -537,26 +533,34 @@ text = "Play again?"
 align = 1
 valign = 1
 
-[node name="YES" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
-margin_left = 254.0
-margin_right = 382.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
-
-[node name="NO" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
-modulate = Color( 0.705882, 0.0705882, 0.25098, 1 )
-margin_left = 386.0
-margin_right = 514.0
-margin_bottom = 128.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -3.01
 autoplay = true
-[connection signal="pressed" from="CenterContainer2/HBoxContainer/YES" to="." method="_on_YES_pressed"]
-[connection signal="pressed" from="CenterContainer2/HBoxContainer/NO" to="." method="_on_NO_pressed"]
+
+[node name="YES" type="TextureButton" parent="."]
+margin_left = 43.6577
+margin_top = 573.488
+margin_right = 171.658
+margin_bottom = 701.488
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NO" type="TextureButton" parent="."]
+modulate = Color( 0.705882, 0.0705882, 0.25098, 1 )
+margin_left = 176.833
+margin_top = 565.427
+margin_right = 304.833
+margin_bottom = 693.427
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="YES" to="." method="_on_YES_pressed"]
+[connection signal="pressed" from="NO" to="." method="_on_NO_pressed"]
