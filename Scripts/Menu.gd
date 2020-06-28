@@ -16,3 +16,13 @@ func _on_ClickWait_timeout():
 
 func _on_ClickWait2_timeout():
 	get_tree().quit()
+
+
+func _on_Credits_pressed():
+	$ClickSFX.play()
+	$Popup.popup()
+	$WindowDialog.show()
+
+
+#func _on_Popup_about_to_show():
+#	$Control/Popup/WindowDialog.

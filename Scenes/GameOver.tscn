@@ -485,32 +485,32 @@ zoom = Vector2( 1.5, 1.5 )
 position = Vector2( 527.887, 355.461 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 89 )
-frame = 3
+frame = 54
 speed_scale = 3.0
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 23.8394
-margin_top = 234.166
-margin_right = 1054.84
-margin_bottom = 317.166
+margin_left = -50.4005
+margin_top = 252.903
+margin_right = 1000.6
+margin_bottom = 336.903
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 135.0
+margin_left = 315.0
 margin_top = 10.0
-margin_right = 896.0
+margin_right = 735.0
 margin_bottom = 73.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_right = 761.0
+margin_right = 420.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 91 )
 custom_colors/font_color = Color( 0.027451, 0.137255, 0.482353, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "You defeated many corona viruses!"
+text = "You were defeated!"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_left = 280.0

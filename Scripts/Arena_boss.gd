@@ -13,10 +13,12 @@ func _ready():
 func _exit_tree():
 	Global.noode_creation_parent = null
 
-
-
-
-func _on_Boss_tree_exited():
-	Global.save_game()
-	yield(get_tree().create_timer(1), "timeout")
-	get_tree().change_scene("res://Scenes/Victory.tscn")
+func _process(delta):
+	if $Boss == null:
+		Global.save_game()
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://Scenes/Victory.tscn")
+		Global.Difficulty -= 0.1
+		Global.num_level += 1
+	if Global.flame == true:
+		Global.flame = false

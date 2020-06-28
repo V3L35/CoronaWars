@@ -19,14 +19,13 @@ radius = 55.3928
 [node name="Boss" type="KinematicBody2D"]
 modulate = Color( 0.639216, 0.666667, 0.384314, 1 )
 script = ExtResource( 3 )
-hp = 30
+hp = 1
 point_addition = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "stand"
-frame = 1
 playing = true
 
 [node name="Boss_Hitbox" type="Area2D" parent="AnimatedSprite" groups=[

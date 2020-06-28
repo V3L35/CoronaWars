@@ -85,6 +85,8 @@ func _on_Area2D_area_entered(area):
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 		Global.points = 0
 
+#func _input(event):
+#	if event is InputEventScreenDrag:
 #		motion = event.relative
 #		motion = motion.normalized()
-#		global_position += motion * 7
+#		global_position += motion * 5

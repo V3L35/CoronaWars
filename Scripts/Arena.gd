@@ -12,14 +12,14 @@ var colors = []
 
 func _ready():
 	Global.noode_creation_parent = self
-
+	$Enemy_spawn_timer.wait_time = Global.Difficulty
 		
 func _exit_tree():
 	Global.noode_creation_parent = null
 
 	
 func _on_Enemy_spawn_timer_timeout():
-	if Global.points >= 2020:
+	if Global.points >= 2020*Global.num_level:
 		get_tree().change_scene("res://Scenes/Arena_boss.tscn")
 	if Global.points % 500 == 0 and Global.points != 0:
 		var flame_position = Vector2(rand_range(0, 640), rand_range(0, 320))
@@ -42,12 +42,12 @@ func _on_Enemy_boss_timeout():
 	Global.instance_node(enemy_2, boss_position, self)
 			
 func _on_Enemy_difficulty_timeout():
-	if $Enemy_spawn_timer.wait_time > 0.5:
+	if $Enemy_spawn_timer.wait_time > 0.2:
 		$Enemy_spawn_timer.wait_time -= 0.01
 
 
 func _on_Flame_powerup_spawn_time_timeout():
-	var flame_position = Vector2(rand_range(0, 640), rand_range(0, 320))
+	var flame_position = Vector2(rand_range(0, 640), rand_range(160, 320))
 	Global.instance_node(flame_1, flame_position, self)
 
 
@@ -66,4 +66,3 @@ func change_color(r, g, b):
 		return [r, g, b]
 	else:
 		return [r, g, b]
-

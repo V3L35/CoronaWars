@@ -39,7 +39,7 @@ position = Vector2( 304.269, 326.65 )
 environment = SubResource( 1 )
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
-wait_time = 3.3
+wait_time = 3.4
 autostart = true
 
 [node name="Enemy_difficulty" type="Timer" parent="."]

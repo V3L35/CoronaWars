@@ -39,6 +39,20 @@ tracks/1/keys = {
 "method": "big_projectile"
 } ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 12.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "big_projectile"
+} ]
+}
 
 [sub_resource type="Environment" id=2]
 background_mode = 4
@@ -67,7 +81,6 @@ __meta__ = {
 
 [node name="Boss" parent="." instance=ExtResource( 8 )]
 position = Vector2( 80.4763, 83.5197 )
-point_addition = 100
 
 [node name="Boss_move" type="AnimationPlayer" parent="Boss"]
 anims/move = SubResource( 1 )
@@ -157,5 +170,4 @@ autoplay = true
 [node name="Flame_powerup_spawn_time" type="Timer" parent="."]
 wait_time = 32.0
 autostart = true
-[connection signal="tree_exited" from="Boss" to="." method="_on_Boss_tree_exited"]
 [connection signal="timeout" from="Flame_powerup_spawn_time" to="." method="_on_Flame_powerup_spawn_time_timeout"]
