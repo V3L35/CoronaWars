@@ -43,18 +43,18 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 243.0
-margin_top = 20.0
-margin_right = 788.0
-margin_bottom = 62.0
+margin_left = 359.0
+margin_right = 671.0
+margin_bottom = 87.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_right = 545.0
-margin_bottom = 42.0
+margin_right = 312.0
+margin_bottom = 87.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "You defeated  corona! Health is saved!"
+text = "You defeated  corona!
+ Health is saved!"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_left = 280.0
@@ -63,24 +63,24 @@ margin_right = 657.0
 margin_bottom = 592.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
-margin_right = 426.0
+margin_right = 516.0
 margin_bottom = 128.0
 alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer2/HBoxContainer"]
 margin_top = 43.0
-margin_right = 162.0
+margin_right = 252.0
 margin_bottom = 85.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.976471, 0.984314, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "Play again?"
+text = "Continue playing?"
 align = 1
 valign = 1
 
 [node name="YES" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
-margin_left = 166.0
-margin_right = 294.0
+margin_left = 256.0
+margin_right = 384.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
@@ -88,8 +88,8 @@ texture_hover = ExtResource( 5 )
 
 [node name="NO" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
 modulate = Color( 0.705882, 0.0705882, 0.25098, 1 )
-margin_left = 298.0
-margin_right = 426.0
+margin_left = 388.0
+margin_right = 516.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )

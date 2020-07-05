@@ -161,7 +161,6 @@ position = Vector2( 319.596, 496.598 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 2 )
 animation = "stand"
-frame = 1
 speed_scale = 0.8
 playing = true
 
@@ -185,20 +184,20 @@ __meta__ = {
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 visible = true
-margin_left = 18.0
-margin_top = 272.0
-margin_right = 355.0
-margin_bottom = 712.0
+margin_left = 17.0
+margin_top = 204.0
+margin_right = 354.0
+margin_bottom = 700.0
 resizable = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="WindowDialog"]
-margin_left = 15.0702
-margin_top = 5.51337
-margin_right = 333.07
-margin_bottom = 548.513
+margin_left = 7.63361
+margin_top = 6.00006
+margin_right = 325.634
+margin_bottom = 498.0
 custom_fonts/font = SubResource( 3 )
 text = "Help Whitey destroy his enemies.
 Corona viruses are advancing so stop them, and preserve health.
@@ -206,6 +205,7 @@ Corona viruses are advancing so stop them, and preserve health.
 Each wave you deafeat corona gets weaker.
 
 Use drag to move and tap to shoot.
+Collect powerups to quickly defeat enemies.
 
 Good luck!"
 autowrap = true

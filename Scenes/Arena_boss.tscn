@@ -6,12 +6,12 @@
 [ext_resource path="res://GFX/font/Stabillo Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Highscore.gd" type="Script" id=6]
-[ext_resource path="res://SFX/Music/infiltrator.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SFX/Music/boss-theme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Big_bad_Corona.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "move"
-length = 12.0
+length = 13.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -32,9 +32,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 4, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "big_projectile"
+}, {
 "args": [  ],
 "method": "big_projectile"
 } ]
@@ -120,9 +123,9 @@ __meta__ = {
 }
 
 [node name="Highscore" type="Label" parent="Node2D/Control"]
-margin_left = 377.888
+margin_left = 116.832
 margin_top = -86.2135
-margin_right = 1665.89
+margin_right = 1404.83
 margin_bottom = 52.7864
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 3 )
@@ -135,9 +138,9 @@ __meta__ = {
 }
 
 [node name="Highscore2" type="Label" parent="Node2D/Control"]
-margin_left = 293.737
+margin_left = 37.8506
 margin_top = -85.8247
-margin_right = 1581.73
+margin_right = 1325.84
 margin_bottom = 53.1755
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 3 )
@@ -156,4 +159,8 @@ autoplay = true
 [node name="Flame_powerup_spawn_time" type="Timer" parent="."]
 wait_time = 32.0
 autostart = true
+
+[node name="Enemy_spawn_waves" type="Timer" parent="."]
+wait_time = 3.3
 [connection signal="timeout" from="Flame_powerup_spawn_time" to="." method="_on_Flame_powerup_spawn_time_timeout"]
+[connection signal="timeout" from="Enemy_spawn_waves" to="." method="_on_Enemy_spawn_waves_timeout"]

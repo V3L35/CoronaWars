@@ -76,6 +76,13 @@ func _on_Area2D_area_entered(area):
 		yield(get_tree().create_timer(1), "timeout")
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 		Global.points = 0
+	elif area.is_in_group("Player_damager_small"):
+		visible = false
+		dead = true
+		Global.flame = false
+		Global.save_game()
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://Scenes/GameOver.tscn")
 	elif area.is_in_group("Player_damager"):
 		visible = false
 		dead = true
