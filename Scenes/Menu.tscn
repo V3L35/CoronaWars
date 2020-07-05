@@ -196,15 +196,15 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 534.0
-margin_bottom = 317.0
+margin_bottom = 337.0
 custom_fonts/font = SubResource( 3 )
 text = "Help Whitey destroy his enemies.
-
 Corona viruses are advancing so stop them, and preserve health.
 
 Each wave you deafeat corona gets weaker.
 
 Use WASD to move and left click to shoot.
+Collect powerups to quickly defeat enemies.
 
 Good luck!"
 autowrap = true

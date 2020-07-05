@@ -63,24 +63,24 @@ margin_right = 657.0
 margin_bottom = 592.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
-margin_right = 514.0
+margin_right = 643.0
 margin_bottom = 128.0
 alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer2/HBoxContainer"]
 margin_top = 32.0
-margin_right = 250.0
+margin_right = 379.0
 margin_bottom = 95.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.972549, 0.976471, 0.984314, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "Play again?"
+text = "Continue playing?"
 align = 1
 valign = 1
 
 [node name="YES" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
-margin_left = 254.0
-margin_right = 382.0
+margin_left = 383.0
+margin_right = 511.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
@@ -88,8 +88,8 @@ texture_hover = ExtResource( 5 )
 
 [node name="NO" type="TextureButton" parent="CenterContainer2/HBoxContainer"]
 modulate = Color( 0.705882, 0.0705882, 0.25098, 1 )
-margin_left = 386.0
-margin_right = 514.0
+margin_left = 515.0
+margin_right = 643.0
 margin_bottom = 128.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )

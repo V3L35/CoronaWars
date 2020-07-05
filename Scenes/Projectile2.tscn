@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GFX/Fireball/fire_ball.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Particles2D.gd" type="Script" id=2]
+[ext_resource path="res://GFX/slavs-kolovrat.png" type="Texture" id=3]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 3
@@ -37,4 +38,11 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rotation = 7.10543e-15
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.180392, 0.0705882, 0.529412, 0.129412 )
+use_parent_material = true
+position = Vector2( 129.156, -1.87402 )
+scale = Vector2( 0.08133, 0.0816958 )
+texture = ExtResource( 3 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

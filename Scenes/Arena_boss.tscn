@@ -6,7 +6,7 @@
 [ext_resource path="res://GFX/font/Stabillo Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/Label.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Highscore.gd" type="Script" id=6]
-[ext_resource path="res://SFX/Music/infiltrator.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SFX/Music/boss-theme.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Big_bad_Corona.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -164,10 +164,14 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -11.106
+volume_db = -10.352
 autoplay = true
 
 [node name="Flame_powerup_spawn_time" type="Timer" parent="."]
 wait_time = 32.0
 autostart = true
+
+[node name="Enemy_spawn_waves" type="Timer" parent="."]
+wait_time = 3.3
 [connection signal="timeout" from="Flame_powerup_spawn_time" to="." method="_on_Flame_powerup_spawn_time_timeout"]
+[connection signal="timeout" from="Enemy_spawn_waves" to="." method="_on_Enemy_spawn_waves_timeout"]
