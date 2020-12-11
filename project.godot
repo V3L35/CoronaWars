@@ -50,8 +50,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="CoronaWars"
-config/description="Corona Wars 2D shooter game"
+config/name="White the Virus"
+config/description="White the virus 2D shooter game"
 run/main_scene="res://Scenes/Menu.tscn"
 boot_splash/image="res://GFX/Background/background_3.png"
 config/icon="res://GFX/Icon/cw-icon.png"

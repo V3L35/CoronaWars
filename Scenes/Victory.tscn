@@ -34,33 +34,36 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 23.8394
-margin_top = 234.166
-margin_right = 1054.84
-margin_bottom = 317.166
+margin_left = -15.7585
+margin_top = 235.58
+margin_right = 1015.24
+margin_bottom = 318.58
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 103.0
+margin_left = 47.0
 margin_top = 9.0
-margin_right = 927.0
+margin_right = 983.0
 margin_bottom = 72.0
 
 [node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
-margin_right = 824.0
+margin_right = 936.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 custom_colors/font_outline_modulate = Color( 0.0313726, 0, 0, 1 )
-text = "You defeated  corona! Health is saved!"
+text = "You defeated big bad virus! Health is saved!"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_left = 280.0
 margin_top = 509.0
 margin_right = 657.0
 margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
 margin_right = 643.0

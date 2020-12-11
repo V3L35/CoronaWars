@@ -49,13 +49,13 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="TextureRect/CenterContainer"]
-margin_left = 61.0
+margin_left = 40.0
 margin_top = 81.0
-margin_right = 267.0
+margin_right = 287.0
 margin_bottom = 127.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.0980392, 0.588235, 0.588235, 1 )
-text = "Corona Wars"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "White the virus!"
 align = 1
 valign = 1
 
@@ -77,10 +77,10 @@ __meta__ = {
 
 [node name="Start" type="TextureButton" parent="TextureRect2"]
 modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
-margin_left = 105.0
-margin_top = 41.0
-margin_right = 309.0
-margin_bottom = 139.0
+margin_left = 107.108
+margin_top = 31.0806
+margin_right = 297.108
+margin_bottom = 108.081
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 expand = true
@@ -89,10 +89,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureRect2/Start"]
-margin_left = -7.0
-margin_top = 3.0
-margin_right = 196.0
-margin_bottom = 112.0
+margin_left = -2.24316
+margin_top = -16.0273
+margin_right = 200.757
+margin_bottom = 92.9727
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "	Start"
@@ -105,10 +105,10 @@ __meta__ = {
 
 [node name="Credits" type="TextureButton" parent="TextureRect2"]
 modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
-margin_left = 105.0
-margin_top = 150.0
-margin_right = 309.0
-margin_bottom = 248.0
+margin_left = 106.0
+margin_top = 218.0
+margin_right = 304.0
+margin_bottom = 298.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 expand = true
@@ -117,9 +117,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="TextureRect2/Credits"]
-margin_top = 3.0
-margin_right = 203.0
-margin_bottom = 112.0
+margin_left = 3.56763
+margin_top = 6.56763
+margin_right = 194.568
+margin_bottom = 80.5676
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Info"
@@ -130,12 +131,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Settings" type="TextureButton" parent="TextureRect2"]
+modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
+margin_left = 109.0
+margin_top = 123.0
+margin_right = 299.0
+margin_bottom = 197.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="TextureRect2/Settings"]
+margin_left = 1.1893
+margin_top = -17.2165
+margin_right = 204.189
+margin_bottom = 91.7835
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Difficulty"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Exit" type="TextureButton" parent="TextureRect2"]
 modulate = Color( 0.760784, 0.811765, 0.811765, 1 )
-margin_left = 105.0
-margin_top = 259.0
+margin_left = 101.0
+margin_top = 310.0
 margin_right = 309.0
-margin_bottom = 357.0
+margin_bottom = 379.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 expand = true
@@ -144,9 +173,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="TextureRect2/Exit"]
-margin_top = 3.0
-margin_right = 203.0
-margin_bottom = 112.0
+margin_left = 1.18921
+margin_top = -4.13531
+margin_right = 204.189
+margin_bottom = 104.865
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Exit"
@@ -173,16 +203,15 @@ wait_time = 0.3
 
 [node name="Popup" type="Popup" parent="."]
 visible = true
-margin_left = 563.891
-margin_top = 266.618
-margin_right = 937.891
-margin_bottom = 543.618
+margin_left = 587.675
+margin_top = 316.565
+margin_right = 961.675
+margin_bottom = 593.565
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
-visible = true
 margin_left = 355.0
 margin_top = 277.0
 margin_right = 887.0
@@ -199,9 +228,9 @@ margin_right = 534.0
 margin_bottom = 337.0
 custom_fonts/font = SubResource( 3 )
 text = "Help Whitey destroy his enemies.
-Corona viruses are advancing so stop them, and preserve health.
+Nasty viruses are advancing so stop them, and preserve health.
 
-Each wave you deafeat corona gets weaker.
+Each wave you deafeat viruses gets weaker.
 
 Use WASD to move and left click to shoot.
 Collect powerups to quickly defeat enemies.
@@ -211,8 +240,19 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="OptionButton" type="OptionButton" parent="."]
+visible = false
+margin_left = 354.384
+margin_top = 281.842
+margin_right = 383.384
+margin_bottom = 301.842
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="TextureRect2/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="TextureRect2/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="TextureRect2/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="TextureRect2/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="timeout" from="ClickWait" to="." method="_on_ClickWait_timeout"]
 [connection signal="timeout" from="ClickWait2" to="." method="_on_ClickWait2_timeout"]
